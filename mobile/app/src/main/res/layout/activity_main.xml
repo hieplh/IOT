@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_dashboard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/group_temperature"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:orientation="vertical"
+            android:weightSum="2"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="30dp"
+            tools:ignore="MissingConstraints">
+            <TextView
+                android:id="@+id/temperature_label"
+                android:text="Temperature"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/temperature_value"
+                android:text="20C"
+                android:textAlignment="center"
+                android:textSize="30dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/group_humidity"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:weightSum="2"
+            android:orientation="vertical"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+            tools:ignore="MissingConstraints">
+            <TextView
+                android:id="@+id/humidity_label"
+                android:text="Humidity"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/humidity_value"
+                android:text="30%"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_weight="1"
+            android:weightSum="2"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/screen_light_tv"
+                android:text="Screen Light"
+                android:textSize="25sp"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <ToggleButton
+                android:id="@+id/btn_turn_on_light_screen"
+                android:checked="true"
+                android:textOff="OFF"
+                android:textOn="ON"
+                android:layout_weight="1"
+                android:layout_centerVertical="true"
+                android:layout_below="@id/screen_light_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:weightSum="2"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/read_data_sensor_tv"
+            android:text="Send data sensor"
+            android:textSize="25sp"
+            android:layout_toEndOf="@id/screen_light_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ToggleButton
+            android:id="@+id/btn_read_data_sensor"
+            android:checked="true"
+            android:textOff="OFF"
+            android:textOn="ON"
+            android:layout_toEndOf="@+id/btn_turn_on_light_screen"
+            android:layout_below="@id/read_data_sensor_tv"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
